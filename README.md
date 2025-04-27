@@ -1,5 +1,7 @@
 # Projet Analyse et Traitement de Données
-# Résumé des Exercices
+
+## Contexte
+Ce projet se compose de trois exercices différents qui visent à appliquer des techniques de programmation et d'analyse de données à divers problèmes. Chaque exercice traite d'une problématique spécifique, allant du calcul du nombre d'amis en commun dans un réseau social à la prédiction du défaut de paiement sur un prêt hypothécaire.
 
 ## Exercice 1 : Calcul du nombre d'amis en commun avec MapReduce
 
@@ -30,7 +32,23 @@ Cet exercice visait à prédire la probabilité qu'un individu fasse défaut sur
 2. **Modélisation** : trois modèles ont été testés pour la prédiction, incluant la régression logistique, l'arbre de décision et le KNN.
 3. **Résultats** : L'arbre de décision a montré les meilleurs résultats pour prédire le défaut de paiement, surclassant les autres modèles en termes de performance et d'interprétabilité.
 
-L'objectif final était de choisir le modèle le plus efficace pour prédire les défauts de paiement dans un cadre bancaire.
+L'objectif réel de cet exercice était l'utilisation de SageMaker.
+
+### Utilisation de SageMaker 
+
+1. **Démarrage de la machine virtuelle** :
+   - SageMaker démarre automatiquement une instance de machine virtuelle sur AWS (basée sur EC2) pour fournir la puissance de calcul nécessaire à l'entraînement du modèle.
+
+2. **Exécution du script d'entraînement (`Train_sm.py`)** :
+   - Le script `Train_sm.py` est copié sur l'instance de machine virtuelle et exécuté. 
+
+3. **Sauvegarde du modèle sur S3** :
+   - Après l'entraînement, le modèle est sauvegardé sur Amazon S3, permettant de stocker et récupérer facilement le modèle pour une utilisation future.
+
+4. **Avantages de l'utilisation de SageMaker** :
+   - **Puissance de calcul** : Accès à des ressources de calcul puissantes, comme des GPU ou des instances haute performance, sans gestion d'infrastructure.
+   - **Fiabilité** : SageMaker assure la haute disponibilité et la sécurité des données tout au long du processus d'entraînement.
+   - **Facilité de déploiement** : Une fois le modèle entraîné, il peut être facilement déployé en production pour des prédictions en temps réel ou par lot.
 
 ## Technologies utilisées
 
